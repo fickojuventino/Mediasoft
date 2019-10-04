@@ -169,7 +169,8 @@ namespace MediaSoft
             services.AddAuthorization(options =>
             {
                 // registering policies
-                options.AddPolicy("NivoPristupaPolicy", policy => policy.RequireClaim("nivo_pristupa", "radnik"));
+                options.AddPolicy("NivoPristupaWorkerPolicy", policy => policy.RequireClaim("nivo_pristupa", "worker"));
+                options.AddPolicy("NivoPristupaRadnikPolicy", policy => policy.RequireClaim("nivo_pristupa", "radnik"));
                 //options.AddPolicy(Policies.OnlyManagers, policy => policy.Requirements.Add(new OnlyEmployeesRequirement()));
             });
 
